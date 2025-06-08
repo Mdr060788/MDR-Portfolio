@@ -14,7 +14,7 @@
 
   <section id="trabajos">
     <h2>Mis Trabajos</h2>
-    <h3>Reportes</h3>
+    <button class="accordion">📊 Reportes</button>
     <div class="grid">
       <a href="https://www.novypro.com/project/customer-segmentation-clustering" target="_blank">
           <img src="https://res.cloudinary.com/dtrztanhq/image/upload/v1664541418/TRABAJO/CV/segmentacion_clientes_gfrfvw.png" alt="IMAGE ALT TEXT HERE" width="270" height="180" border="10" />
@@ -37,6 +37,16 @@
       <a href="https://app.powerbi.com/view?r=eyJrIjoiNDMyZDNkNjEtYjFhYi00YjZlLWIxN2QtYjYxM2ZkYjYxMDJlIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9&pageName=ReportSectione510d54ce43c0ac6684b" target="_blank">
           <img src="https://res.cloudinary.com/dtrztanhq/image/upload/v1712629304/Pantallazo_tyv5hb.png" alt="IMAGE ALT TEXT HERE" width="270" height="180" border="10" />
       </a>
+      <script>
+        // Recorremos todos los botones de tipo acordeón
+        document.querySelectorAll(".accordion").forEach((accordion) => {
+          accordion.addEventListener("click", function () {
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            panel.style.display = panel.style.display === "block" ? "none" : "block";
+          });
+        });
+      </script>
     </div>
 
     <h3>Apps</h3>
