@@ -12,12 +12,7 @@ header {
 h2, h3 {
   color: #444;
 }
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
+
 .grid img {
   width: 350px;
   height: 200px;
@@ -43,4 +38,72 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+.accordion {
+  cursor: pointer;
+  background-color: #2d2d2d;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion:hover {
+  background-color: #444;
+}
+
+.accordion:after {
+  content: '▼';
+  font-size: 13px;
+  transition: transform 0.3s;
+}
+
+.accordion.active:after {
+  transform: rotate(180deg);
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.grid a {
+  flex: 1 1 270px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.grid a img {
+  width: 100%;
+  height: auto;
+  border: 5px solid #eee;
+  border-radius: 8px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.grid a:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
