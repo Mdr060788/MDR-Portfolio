@@ -37,16 +37,6 @@
       <a href="https://app.powerbi.com/view?r=eyJrIjoiNDMyZDNkNjEtYjFhYi00YjZlLWIxN2QtYjYxM2ZkYjYxMDJlIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9&pageName=ReportSectione510d54ce43c0ac6684b" target="_blank">
           <img src="https://res.cloudinary.com/dtrztanhq/image/upload/v1712629304/Pantallazo_tyv5hb.png" alt="IMAGE ALT TEXT HERE" width="270" height="180" border="10" />
       </a>
-      <script>
-        // Recorremos todos los botones de tipo acordeón
-        document.querySelectorAll(".accordion").forEach((accordion) => {
-          accordion.addEventListener("click", function () {
-            this.classList.toggle("active");
-            const panel = this.nextElementSibling;
-            panel.style.display = panel.style.display === "block" ? "none" : "block";
-          });
-        });
-      </script>
     </div>
 
     <button class="accordion">🛠️ Apps</button>
@@ -81,6 +71,15 @@
       <a href="https://medium.com/@maurodanielrossi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@maurodanielrossi" height="30" width="40" /></a>
     </p>
   </section>
+  <script>
+    document.querySelectorAll(".accordion").forEach((accordion) => {
+      accordion.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
 
   <section id="skills">
     <h3>Lenguajes y herramientas:</h3>
