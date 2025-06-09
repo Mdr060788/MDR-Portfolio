@@ -62,13 +62,15 @@ a:hover {
   background-color: #444;
 }
 
-.accordion:after {
-  content: '▼';
-  font-size: 13px;
-  transition: transform 0.3s;
+.accordion::after {
+  content: '►';
+  font-size: 16px;
+  transition: transform 0.3s ease;
+  position: absolute;
+  right: 20px;
 }
 
-.accordion.active:after {
+.accordion.active::after {
   transform: rotate(90deg);
 }
 
