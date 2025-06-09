@@ -88,12 +88,12 @@
   </section>
 </body>
     <script>
-    document.querySelectorAll(".accordion").forEach((accordion) => {
-      accordion.addEventListener("click", function () {
-        this.classList.toggle("active");
-        const panel = this.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      document.querySelectorAll(".accordion").forEach((accordion) => {
+        accordion.addEventListener("click", function () {
+          this.classList.toggle("active");
+          const panel = this.nextElementSibling;
+          panel.classList.toggle("show");
+        });
       });
-    });
   </script>
 </html>
