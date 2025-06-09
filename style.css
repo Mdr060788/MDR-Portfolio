@@ -115,3 +115,44 @@ a:hover {
 .grid.show, .apps.show {
   display: grid;
 }
+
+.grid, .grid.apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+@media (min-width: 901px) {
+  .grid, .grid.apps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+  .grid, .grid.apps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid, .grid.apps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid a, .grid.apps a {
+  text-align: center;
+}
+
+.grid img, .grid.apps img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.grid img, .grid.apps img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
