@@ -71,15 +71,6 @@
       <a href="https://medium.com/@maurodanielrossi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@maurodanielrossi" height="30" width="40" /></a>
     </p>
   </section>
-  <script>
-    document.querySelectorAll(".accordion").forEach((accordion) => {
-      accordion.addEventListener("click", function () {
-        this.classList.toggle("active");
-        const panel = this.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-      });
-    });
-  </script>
 
   <section id="skills">
     <h3>Lenguajes y herramientas:</h3>
@@ -96,4 +87,13 @@
     </div>
   </section>
 </body>
+    <script>
+    document.querySelectorAll(".accordion").forEach((accordion) => {
+      accordion.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
 </html>
