@@ -81,13 +81,14 @@ body {
 header {
     text-align: center;
     padding: 2rem 0;
-    color: #eee; /* un poco más claro para destacar el header */
+    color: #eee; 
     font-weight: 600;
     letter-spacing: 1px;
 }
 
 h1, h2, h3 {
-    color: #ddd; /* encabezados claros */
+    padding: 12px;
+    color: #ddd;
     font-weight: 600;
     margin-bottom: 0.5rem;
     text-shadow:
@@ -100,26 +101,26 @@ section {
 }
 
 p {
-    color: #bbb; /* párrafos un poco más suaves que encabezados */
+    color: #bbb;
     font-size: 1rem;
 }
 
 a {
-    color: #59a6d2; /* azul vibrante pero no chillón */
+    color: #59a6d2; 
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover, a:focus {
-    color: #a0d8ef; /* azul claro al hover */
+    color: #a0d8ef; 
     text-decoration: underline;
 }
 
 .wave {
-    background: rgba(255, 255, 255, 0.15); /* menos opaco para no resaltar tanto */
+    background: rgba(255, 255, 255, 0.15); 
 }
 
-/* Opcional: mejorar legibilidad en inputs o botones */
+
 input, button, select, textarea {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid #444;
@@ -226,35 +227,39 @@ input:focus, button:hover, select:focus, textarea:focus {
 /* ====== Accordion ====== */
 .accordion {
   cursor: pointer;
-  background-color: #2d2d2d;
-  color: white;
+  background-color: rgba(50, 50, 50, 0.85); /* gris oscuro semi-transparente */
+  color: #ddd; /* texto claro, pero no blanco puro */
   padding: 15px;
   width: 100%;
   text-align: left;
   border: none;
   outline: none;
   font-size: 18px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   border-radius: 5px;
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 0 8px rgba(89, 166, 210, 0.5); /* un leve resplandor azul */
 }
 
 .accordion:hover {
-  background-color: #444;
+  background-color: rgba(68, 68, 68, 0.9);
+  color: #a0d8ef; /* azul claro para el texto al hover */
 }
 
 .accordion::after {
   content: '►';
   font-size: 16px;
-  transition: transform 0.3s ease;
-  right: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #59a6d2;
+  margin-left: 10px;
 }
 
 .accordion.active::after {
   transform: rotate(90deg);
+  color: #a0d8ef;
 }
 
 .panel {
