@@ -1,10 +1,24 @@
 /* ====== Estilos Generales ====== */
-body {
+/*body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0 2rem;
   background-color: #f4f4f4;
   color: #333;
+}*/
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0 2rem;
+  background: radial-gradient(ellipse at bottom, #0d1a26 0%, #000000 100%);
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0,255,255,0.2) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(255,0,255,0.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(0,255,128,0.15) 0%, transparent 40%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ddd;
 }
 
 header {
