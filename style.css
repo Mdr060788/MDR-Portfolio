@@ -79,25 +79,62 @@ body {
 }
 
 header {
-  text-align: center;
-  padding: 2rem 0;
+    text-align: center;
+    padding: 2rem 0;
+    color: #eee; /* un poco más claro para destacar el header */
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-h2, h3 {
-  color: #444;
+h1, h2, h3 {
+    color: #ddd; /* encabezados claros */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow:
+      0 0 5px rgba(200, 200, 255, 0.6);
 }
 
 section {
-  margin-bottom: 3rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+p {
+    color: #bbb; /* párrafos un poco más suaves que encabezados */
+    font-size: 1rem;
 }
 
 a {
-  color: #0066cc;
-  text-decoration: none;
+    color: #59a6d2; /* azul vibrante pero no chillón */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-a:hover {
-  text-decoration: underline;
+a:hover, a:focus {
+    color: #a0d8ef; /* azul claro al hover */
+    text-decoration: underline;
+}
+
+.wave {
+    background: rgba(255, 255, 255, 0.15); /* menos opaco para no resaltar tanto */
+}
+
+/* Opcional: mejorar legibilidad en inputs o botones */
+input, button, select, textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #444;
+    color: #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input:focus, button:hover, select:focus, textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #59a6d2;
+    outline: none;
 }
 
 /* ====== Grid y Apps ====== */
