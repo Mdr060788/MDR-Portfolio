@@ -80,6 +80,7 @@ a:hover {
 
 .grid.show, .apps.show {
   display: grid;
+  align-items: center;
 }
 
 /* Responsividad */
