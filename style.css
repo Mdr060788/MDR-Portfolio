@@ -9,7 +9,8 @@
 
 body {
     margin: auto;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    /*font-family: -apple-system, BlinkMacSystemFont, sans-serif;*/
+    font-family: 'Exo 2', sans-serif;
     overflow: auto;
     /*background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);*/
     background: linear-gradient(315deg, #2b001f 3%, #1e3a5f 38%, #11605d 68%, #4d0a0a 98%);
@@ -87,6 +88,7 @@ header {
 }
 
 h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
     padding: 12px;
     color: #ddd;
     font-weight: 600;
@@ -194,6 +196,7 @@ input:focus, button:hover, select:focus, textarea:focus {
 }
 
 .grid.show, .apps.show {
+  margin-top: 40px;
   display: grid;
   align-items: center;
 }
