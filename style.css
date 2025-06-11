@@ -231,6 +231,8 @@ input:focus, button:hover, select:focus, textarea:focus {
 
 /* ====== Accordion ====== */
 .accordion {
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px rgba(200, 200, 255, 0.6);
   cursor: pointer;
   background-color: rgba(50, 50, 50, 0.85); /* gris oscuro semi-transparente */
   color: #ddd; /* texto claro, pero no blanco puro */
