@@ -87,6 +87,10 @@ header {
     letter-spacing: 1px;
 }
 
+.proyecto {
+  text-align: center;
+}
+
 h1, h2, h3 {
     font-family: 'Orbitron', sans-serif;
     padding: 12px;
