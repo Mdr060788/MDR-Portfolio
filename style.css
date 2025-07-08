@@ -377,16 +377,15 @@ details.acordeon .contenido a:hover {
   text-decoration: underline;
 }
 
-details.acordeon summary::before {
+details.acordeon summary::after {
   content: '►';
   display: inline-block;
-  margin-right: 8px;
+  margin-left: 8px;
   transition: transform 0.3s ease;
   color: #59a6d2;
 }
 
-details.acordeon[open] summary::before {
+details.acordeon[open] summary::after {
   content: '▼';
-  transform: rotate(0deg);
   color: #a0d8ef;
 }
