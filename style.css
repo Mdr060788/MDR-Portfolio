@@ -334,3 +334,53 @@ input:focus, button:hover, select:focus, textarea:focus {
   overflow: hidden;
   margin-top: 10px;
 }
+
+details.acordeon {
+  margin-top: 10px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.95rem;
+  color: #ccc;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+details.acordeon summary {
+  cursor: pointer;
+  color: #aaa;
+  font-weight: 600;
+  font-size: 1rem;
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+details.acordeon summary:hover {
+  color: #59a6d2;
+}
+
+details.acordeon .contenido {
+  padding-top: 8px;
+  color: #eee;
+}
+
+details.acordeon .contenido p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+details.acordeon .contenido a {
+  display: inline-block;
+  margin-top: 5px;
+  color: #59a6d2;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+details.acordeon .contenido a:hover {
+  color: #a0d8ef;
+  text-decoration: underline;
+}
