@@ -337,15 +337,7 @@ input:focus, button:hover, select:focus, textarea:focus {
 
 details.acordeon {
   margin-top: 10px;
-  font-family: 'Exo 2', sans-serif;
   font-size: 0.95rem;
-  color: #ccc;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
 }
 
 details.acordeon summary {
