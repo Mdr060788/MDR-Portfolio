@@ -361,7 +361,7 @@ details.acordeon .contenido {
 details.acordeon .contenido p {
   font-size: 0.95rem;
   line-height: 1.4;
-  margin-bottom: 8px;
+  margin: 10px;
 }
 
 details.acordeon .contenido a {
@@ -375,4 +375,18 @@ details.acordeon .contenido a {
 details.acordeon .contenido a:hover {
   color: #a0d8ef;
   text-decoration: underline;
+}
+
+details.acordeon summary::before {
+  content: '►';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+  color: #59a6d2;
+}
+
+details.acordeon[open] summary::before {
+  content: '▼';
+  transform: rotate(0deg);
+  color: #a0d8ef;
 }
