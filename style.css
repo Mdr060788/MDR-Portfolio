@@ -342,7 +342,8 @@ details.acordeon {
 
 details.acordeon summary {
   cursor: pointer;
-  color: #aaa;
+  color: rgb(89, 166, 210);
+  text-shadow: rgba(200, 200, 255, 0.6) 0px 0px 5px;
   font-weight: 600;
   font-size: 1rem;
   list-style: none;
@@ -350,7 +351,8 @@ details.acordeon summary {
 }
 
 details.acordeon summary:hover {
-  color: #59a6d2;
+  color: #a0d8ef;
+  text-decoration: underline; 
 }
 
 details.acordeon .contenido {
