@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mdr060788.github.io/MDR-Portfolio/sitemap.xml
+Sitemap: https://proyectos.mdrdata.com.ar/sitemap.xml
