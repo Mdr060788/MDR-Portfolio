@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://proyectos.mdrdata.com.ar/sitemap.xml
+Sitemap: https://mdrdata.com.ar/sitemap.xml
