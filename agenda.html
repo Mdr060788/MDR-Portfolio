@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Agendá un diagnóstico de datos con MDR Data. BI, Power BI, automatización, SQL, Python, apps e inteligencia artificial." />
+<title>Agendar diagnóstico | MDR Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .agenda-hero{ min-height:auto; padding:9rem 0 2.5rem; display:block; }
+  .agenda-hero .container{ text-align:center; }
+  .agenda-hero .section-label{ justify-content:center; }
+  .agenda-hero .hero-title{ margin-bottom:1rem; }
+  .agenda-hero .hero-sub{ margin:0 auto; }
+
+  .booking-panel{
+    max-width:760px; margin:0 auto;
+    background:var(--surface); border:1px solid var(--border); border-radius:20px;
+    padding:2rem; backdrop-filter:blur(6px); text-align:center;
+  }
+  .booking-panel .hint{ color:var(--text-dim); font-size:.8rem; margin-top:1rem; }
+
+  /* El botón que inyecta el script de Google se ve más integrado con este wrapper */
+  #calendarScheduleButton{
+    display:flex; justify-content:center; margin-top:.5rem;
+  }
+</style>
+</head>
+<body>
+<div class="wave"></div>
+<div class="wave"></div>
+<div class="wave"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Logo.png" alt="MDR Data" style="height:28px;width:28px;object-fit:cover;border-radius:50%;mix-blend-mode:lighten;margin-right:0.5rem;vertical-align:middle;">
+    MDR DATA
+  </a>
+  <button class="nav-burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#proyectos">Proyectos</a></li>
+    <li><a href="index.html#sectores">Sectores</a></li>
+    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+    <li><a href="index.html#contacto" class="nav-cta">Contactar</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="agenda-hero">
+    <div class="container">
+      <div class="section-label">Consultoría MDR Data</div>
+      <h1 class="hero-title">Empecemos por <em>el problema.</em></h1>
+      <p class="hero-sub">Una primera sesión para entender qué está pasando con tus datos, detectar oportunidades y definir el camino más conveniente: BI, automatización, desarrollo, análisis o IA.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="section-label">¿Qué cubre la sesión?</div>
+      <h2 class="section-title">No necesitás llegar con una solución definida.</h2>
+      <p class="section-desc">Traé el problema, el proceso o los datos que hoy te generan dolores de cabeza.</p>
+      <div class="services-grid" style="margin-top:1.5rem;">
+        <div class="service-card"><div class="service-icon">👀</div><div class="service-title">Entendemos tu proceso</div><div class="service-desc">Cómo funciona hoy y dónde aparecen los problemas.</div></div>
+        <div class="service-card"><div class="service-icon">🧩</div><div class="service-title">Detectamos el cuello de botella</div><div class="service-desc">Dónde se pierde tiempo o se generan errores.</div></div>
+        <div class="service-card"><div class="service-icon">🗂️</div><div class="service-title">Evaluamos tus datos</div><div class="service-desc">Qué información y herramientas ya tenés disponibles.</div></div>
+        <div class="service-card"><div class="service-icon">🚀</div><div class="service-title">Próximos pasos</div><div class="service-desc">Un camino concreto: BI, automatización, apps o análisis.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agenda">
+    <div class="container">
+      <div class="section-label">Reservá tu sesión</div>
+      <h2 class="section-title" style="text-align:center;">Elegí un horario</h2>
+      <div class="booking-panel">
+        <p style="color:var(--text-muted);font-size:.92rem;">Sesión online, sin costo ni compromiso. Elegí el día y la hora que más te convengan.</p>
+        <div id="calendarScheduleButton"></div>
+        <p class="hint">Vas a recibir la confirmación y el link de la videollamada directo en tu email desde Google Calendar.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © Mauro Rossi — MDR Data · BI · Automatización · Apps · Data Science ·
+  <a href="mailto:proyectos@mdrdata.com.ar">proyectos@mdrdata.com.ar</a>
+</footer>
+
+<script>
+  const burger = document.getElementById("navBurger");
+  const links = document.getElementById("navLinks");
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("open");
+    links.classList.toggle("open");
+  });
+</script>
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.getElementById('calendarScheduleButton');
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ06saMwFOWO_n--j5HQdnsmQocYxM1nQyajhBQp9gL8baIHyffGF73DEYC80x1QbbC5MLSAT9pr?gv=true',
+      color: '#039BE5',
+      label: 'Programar una cita',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
+</body>
+</html>
