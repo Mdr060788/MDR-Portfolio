@@ -79,6 +79,7 @@ nav {
   font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--text-muted); text-decoration: none; font-weight: 500;
   transition: color 0.2s;
+  white-space: nowrap;   /* nuevo: evita que el texto se parta en dos líneas */
 }
 .nav-links a:hover { color: var(--accent2); }
 .nav-cta {
@@ -87,6 +88,7 @@ nav {
   border: 1px solid var(--border-accent);
   padding: 0.4rem 1.1rem; border-radius: 2rem;
   transition: background 0.2s !important;
+  flex-shrink: 0;   /* nuevo: no deja que el botón se achique y empuje el texto */
 }
 .nav-cta:hover { background: rgba(89,166,210,0.35) !important; }
 
@@ -564,7 +566,7 @@ footer a:hover { color: var(--accent2); }
 .modal-iframe-wrap iframe { width: 100%; height: 100%; }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .nav-burger { display: flex; }
   .nav-links {
     display: none;
