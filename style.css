@@ -155,7 +155,7 @@ nav {
   font-size: 1rem; color: var(--text-muted);
   max-width: 420px; margin-bottom: 2.5rem; line-height: 1.75;
 }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;}
 .btn-primary {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: rgba(89,166,210,0.25); color: var(--accent2);
