@@ -17,30 +17,71 @@
   .agenda-hero .hero-sub{ margin:0 auto; }
 
   .booking-panel{
-    max-width:900px; margin:0 auto;
+    max-width:960px; margin:0 auto;
     background:var(--surface); border:1px solid var(--border); border-radius:20px;
     padding:1.5rem; backdrop-filter:blur(6px); text-align:center;
   }
   .booking-panel .hint{ color:var(--text-dim); font-size:.8rem; margin-top:1rem; }
 
-  /* Contenedor del iframe de Microsoft Bookings */
-  #bookingIframeWrapper{
-    margin-top:1rem;
-    border-radius:16px;
+  /* Marco tipo "ventana" del scheduler */
+  .scheduler-frame{
+    margin-top:1.25rem;
+    border-radius:18px;
     overflow:hidden;
     background:#fff;
     border:1px solid var(--border);
-    box-shadow:0 6px 24px rgba(0,0,0,.25);
+    box-shadow:0 12px 40px rgba(0,0,0,.35), 0 0 0 1px rgba(34,211,238,.08) inset;
   }
-  #bookingIframeWrapper iframe{
+  .scheduler-frame__bar{
+    display:flex; align-items:center; gap:.5rem;
+    padding:.6rem .9rem;
+    background:linear-gradient(90deg, rgba(34,211,238,.12), rgba(34,211,238,.02));
+    border-bottom:1px solid var(--border);
+  }
+  .scheduler-frame__dot{
+    width:10px; height:10px; border-radius:50%;
+    background:#ff5f57; box-shadow:14px 0 0 #febc2e, 28px 0 0 #28c840;
+    margin-right:1.4rem; flex:0 0 auto;
+  }
+  .scheduler-frame__title{
+    font-family:'Orbitron', sans-serif;
+    font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--text-dim);
+  }
+  .scheduler-frame__body{
+    position:relative;
+    background:#fff;
+  }
+  .scheduler-frame__body iframe{
     display:block;
     width:100%;
-    height:720px;
+    height:760px;
     border:0;
     background:#fff;
   }
+
+  /* Botón fallback */
+  .scheduler-fallback{
+    display:inline-flex; align-items:center; gap:.45rem;
+    margin-top:.9rem;
+    padding:.55rem 1rem;
+    font-size:.82rem;
+    color:var(--text-muted);
+    border:1px solid var(--border);
+    border-radius:999px;
+    text-decoration:none;
+    background:transparent;
+    transition:border-color .2s ease, color .2s ease, background .2s ease;
+  }
+  .scheduler-fallback:hover{
+    color:#22d3ee;
+    border-color:#22d3ee;
+    background:rgba(34,211,238,.06);
+  }
+
   @media (max-width:600px){
-    #bookingIframeWrapper iframe{ height:900px; }
+    .booking-panel{ padding:1rem; }
+    .scheduler-frame__body iframe{ height:900px; }
   }
 </style>
 </head>
@@ -93,17 +134,31 @@
       <h2 class="section-title" style="text-align:center;">Elegí un horario</h2>
       <div class="booking-panel">
         <p style="color:var(--text-muted);font-size:.92rem;">Sesión online, sin costo ni compromiso. Elegí el día y la hora que más te convengan.</p>
-        <div id="bookingIframeWrapper">
-          <iframe
-            src="https://bookings.cloud.microsoft/book/DiagnosticodeDatos@mdrdata.com.ar/?ismsaljsauthenabled"
-            width="100%"
-            height="100%"
-            scrolling="yes"
-            style="border:0"
-            title="Agendar diagnóstico con MDR Data"
-            loading="lazy">
-          </iframe>
+
+        <div class="scheduler-frame">
+          <div class="scheduler-frame__bar">
+            <span class="scheduler-frame__dot" aria-hidden="true"></span>
+            <span class="scheduler-frame__title">MDR Data · Scheduler</span>
+          </div>
+          <div class="scheduler-frame__body">
+            <iframe
+              src="https://bookings.cloud.microsoft/book/DiagnosticodeDatos@mdrdata.com.ar/?ismsaljsauthenabled"
+              width="100%"
+              height="100%"
+              scrolling="yes"
+              style="border:0"
+              title="Agendar diagnóstico con MDR Data"
+              loading="lazy">
+            </iframe>
+          </div>
         </div>
+
+        <a class="scheduler-fallback"
+           href="https://bookings.cloud.microsoft/book/DiagnosticodeDatos@mdrdata.com.ar/?ismsaljsauthenabled"
+           target="_blank" rel="noopener noreferrer">
+          ↗ Abrir el calendario en una pestaña nueva
+        </a>
+
         <p class="hint">Vas a recibir la confirmación y el link de la videollamada directo en tu email desde Microsoft Bookings.</p>
       </div>
     </div>
