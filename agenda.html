@@ -17,26 +17,47 @@
   .agenda-hero .hero-sub{ margin:0 auto; }
 
   .booking-panel{
-    max-width:840px; margin:0 auto; /* Ancho optimizado para la interfaz de Bookings corporativo */
+    max-width:760px; margin:0 auto;
     background:var(--surface); border:1px solid var(--border); border-radius:20px;
-    padding:2rem; backdrop-filter:blur(6px); text-align:center;
+    padding:3rem 2rem; backdrop-filter:blur(6px); text-align:center;
   }
-  .booking-panel .hint{ color:var(--text-dim); font-size:.8rem; margin-top:1rem; }
+  .booking-panel .hint{ color:var(--text-dim); font-size:.8rem; margin-top:1.5rem; }
 
-  /* Contenedor responsivo para evitar el colapso del iframe de Microsoft */
-  .m365-booking-wrapper {
-    width: 100%;
-    margin-top: 1.5rem;
-    overflow: hidden;
-    border-radius: 16px;
-    background: #ffffff; /* Mantiene la legibilidad del panel de citas */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  /* Contenedor y estilos para el botón de agendamiento */
+  .bookings-btn-container {
+    margin: 2.5rem 0 1.5rem;
+    display: flex;
+    justify-content: center;
   }
-  .m365-booking-wrapper iframe {
-    width: 100%;
-    height: 750px; /* Altura ideal para navegar días y horas sin scroll doble */
-    border: none;
-    display: block;
+
+  .bookings-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: linear-gradient(135deg, #0078d4, #005a9e); /* Azul M365 corporativo */
+    color: #ffffff;
+    padding: 1.2rem 2.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 120, 212, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+  }
+
+  .bookings-action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 120, 212, 0.55);
+    background: linear-gradient(135deg, #0086ea, #0066b3);
+  }
+
+  .bookings-action-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 15px rgba(0, 120, 212, 0.4);
   }
 </style>
 </head>
@@ -90,12 +111,14 @@
       <div class="booking-panel">
         <p style="color:var(--text-muted);font-size:.92rem;">Sesión online, sin costo ni compromiso. Elegí el día y la hora que más te convengan.</p>
         
-        <!-- Contenedor del Iframe de Microsoft Bookings Compartido -->
-        <div class="m365-booking-wrapper">
-          <iframe src="https://cloud.microsoft" allowfullscreen></iframe>
+        <!-- Botón de redirección limpio a la agenda compartida de Microsoft Bookings -->
+        <div class="bookings-btn-container">
+          <a href="https://cloud.microsoft" target="_blank" rel="noopener noreferrer" class="bookings-action-btn">
+            <span>📅</span> Seleccionar Día y Horario
+          </a>
         </div>
 
-        <p class="hint">Vas a recibir la confirmación y las credenciales de la reunión directo en tu correo.</p>
+        <p class="hint">Al hacer clic, se abrirá la plataforma de Microsoft en una nueva pestaña para finalizar tu agendamiento.</p>
       </div>
     </div>
   </section>
