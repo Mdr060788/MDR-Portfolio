@@ -17,26 +17,19 @@
   .agenda-hero .hero-sub{ margin:0 auto; }
 
   .booking-panel{
-    max-width:840px; margin:0 auto; /* Ampliado levemente para dar más aire a la interfaz de Bookings */
+    max-width:760px; margin:0 auto;
     background:var(--surface); border:1px solid var(--border); border-radius:20px;
     padding:2rem; backdrop-filter:blur(6px); text-align:center;
   }
   .booking-panel .hint{ color:var(--text-dim); font-size:.8rem; margin-top:1rem; }
 
-  /* Contenedor y estilos responsivos para Microsoft Bookings */
-  .m365-booking-wrapper {
-    width: 100%;
-    margin-top: 1.5rem;
-    overflow: hidden;
-    border-radius: 16px;
-    background: #ffffff; /* Mantiene fondo blanco limpio para la interfaz interna */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  /* El botón que inyecta el script de Google se ve más integrado con este wrapper */
+  #calendarScheduleButton{
+    display:flex; justify-content:center; margin-top:.5rem;
   }
-  .m365-booking-wrapper iframe {
-    width: 100%;
-    height: 720px; /* Altura óptima para evitar scroll doble en la selección de horas */
-    border: none;
-    display: block;
+  iframe[src*="calendar.google.com"]{
+    background:#fff !important;
+    border-radius:16px;
   }
 </style>
 </head>
@@ -89,13 +82,8 @@
       <h2 class="section-title" style="text-align:center;">Elegí un horario</h2>
       <div class="booking-panel">
         <p style="color:var(--text-muted);font-size:.92rem;">Sesión online, sin costo ni compromiso. Elegí el día y la hora que más te convengan.</p>
-        
-        <!-- Contenedor del Iframe de Microsoft Bookings -->
-        <div class="m365-booking-wrapper">
-          <iframe src="https://bookings.cloud.microsoft/bookwithme/user/370705925a5f4ced892b219a4b42e535@mdrdata.com.ar/meetingtype/7xEParYiSUiRD4E-cGSuEg2?anonymous&ismsaljsauthenabled&ep=mlink" allowfullscreen></iframe>
-        </div>
-
-        <p class="hint">Vas a recibir la confirmación y las credenciales de la reunión directo en tu correo.</p>
+        <div id="calendarScheduleButton"></div>
+        <p class="hint">Vas a recibir la confirmación y el link de la videollamada directo en tu email desde Google Calendar.</p>
       </div>
     </div>
   </section>
@@ -114,5 +102,23 @@
     links.classList.toggle("open");
   });
 </script>
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.getElementById('calendarScheduleButton');
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ06saMwFOWO_n--j5HQdnsmQocYxM1nQyajhBQp9gL8baIHyffGF73DEYC80x1QbbC5MLSAT9pr?gv=true',
+      color: '#039BE5',
+      label: 'Programar una cita',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
 </body>
 </html>
